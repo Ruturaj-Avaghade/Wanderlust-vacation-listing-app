@@ -39,8 +39,6 @@ main()
     console.log(err);
   });
 
-console.log("dbUrl =", process.env.ATLASDB_URL);
-
 async function main() {
   await mongoose.connect(dbUrl);
 }
@@ -86,6 +84,9 @@ app.use((req, res, next) => {
 });
 
 //listing routes
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/user", userRouter);
