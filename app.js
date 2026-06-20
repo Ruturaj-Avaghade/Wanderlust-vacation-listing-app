@@ -39,6 +39,8 @@ main()
     console.log(err);
   });
 
+console.log("dbUrl =", process.env.ATLASDB_URL);
+
 async function main() {
   await mongoose.connect(dbUrl);
 }
