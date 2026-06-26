@@ -1,45 +1,44 @@
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top  ">
+  <div class="container-fluid  ">
+
+    <!-- logo -->
+    <a class="navbar-brand order-1  " href="/listings"><i class="fa-regular fa-compass logo "></i> Wanderlust </a>
      
-    >
+    <!-- searchbar -->
+     <form class="d-flex  mt-2 mb-1  order-3 order-md-2 search-form" role="search">
+      <input class="form-control me-2 flex-grow-1 search-bar" type="search" placeholder="Search destinations" aria-label="Search"/>
+      <button class="btn search-btn" type="submit">Search</button>
+    </form>
+
+    <!-- toggler button -->
+     <button class="navbar-toggler order-2 order-md-3 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Explor</a>
-        
-      </div>
-      <div  class="navbar-nav ms-auto">
-          <form class="d-flex" role="search">
-      <input class="form-control me-2" id="search-inp" type="search" placeholder="Search destinations" aria-label="Search"/>
-      <button class="btn " id="search-btn" type="submit">
-      <i class="fa-solid fa-magnifying-glass"></i>Search</button>
-    </form>
-      </div>
-      
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link " href="/listings/new">List your property</a>
-       <% if (!currentUser) { %>
-         <a class="nav-link " aria-current="page" href="/user/signup"><b>Sign up</b></a>
 
-        <a class="nav-link" 
+     <!-- nav options -->
+      <div class="collapse navbar-collapse order-4" id="navbarText">
+      
+      <ul class="navbar-nav ms-auto nav-options">
+
+        <li class="nav-item"><a class="nav-link " href="/listings/new">List your property</a></li>
+
+       <% if (!currentUser) { %>
+
+         <li class="nav-item"><a class="nav-link " aria-current="page" href="/user/signup">Sign up</a></li>
+
+        <li class="nav-item"><a class="nav-link" 
         href="/user/login?redirectUrl=<%= encodeURIComponent(currentUrl)%>">
-        <b>Log in</b>
-        </a>
+          Log in
+        </a></li>
+
        <% } %>
        
        <% if (currentUser) { %>
-        <a class="nav-link" href="/user/logout">Log out</a>
+         <li class="nav-item"><a class="nav-link" href="/user/logout">Log out</a></li>
        <% } %>
-        
-       
+
+       </ul>    
     </div>
     </div>
   </div>
