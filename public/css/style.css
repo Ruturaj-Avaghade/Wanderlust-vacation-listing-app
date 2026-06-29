@@ -136,48 +136,34 @@ body {
   height: 400px;
 }
 
-.options {
-  display: flex;
-  justify-content: space-between;
-}
 /* filters */
+
 #filters {
   display: flex;
-
+  justify-content: space-evenly;
   padding-top: 10px;
-  max-width: 800px;
+  width: auto;
   overflow-x: auto;
 }
+#filters::-webkit-scrollbar {
+  display: none;
+}
+
 .filter {
   display: flex;
   flex-direction: column;
   align-items: center;
   opacity: 0.7;
+  border-bottom: 2px solid transparent;
+  margin-left: 1rem;
 }
 .filter p {
   font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .filter:hover {
   opacity: 1;
   cursor: pointer;
-}
-
-.tax-info {
-  display: none;
-  font-weight: 500;
-}
-.tax-switch {
-  border: 1px solid gray;
-  opacity: 0.9;
-  border-radius: 1rem;
-  height: 3rem;
-  margin-top: 2px;
-  padding: 1rem;
-}
-
-.tax-switch:hover {
-  border: 1px solid black;
-  opacity: 1;
-  cursor: pointer;
+  border-bottom: 2px solid black;
 }

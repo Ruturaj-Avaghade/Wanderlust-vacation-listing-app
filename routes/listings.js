@@ -20,6 +20,7 @@ router
   .route("/")
   // index route
   .get(wrapAsync(indexPage))
+
   // // create new listing , here used wrapAsync function for async error handling
   .post(
     isLoggedIn("create new listing"),
