@@ -152,7 +152,7 @@ Through this project, I gained hands-on experience with:
 **Ruturaj Avaghade**
 
 * GitHub: https://github.com/Ruturaj-Avaghade
-* LinkedIn: Add your LinkedIn profile here
+* LinkedIn: https://www.linkedin.com/in/ruturaj-avaghade
 
 ---
 
