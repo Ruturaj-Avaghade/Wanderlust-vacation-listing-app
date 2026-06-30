@@ -4,6 +4,7 @@ const { search } = require("../routes/listings.js");
 
 module.exports.indexPage = async (req, res) => {
   const { search } = req.query;
+  const { category } = req.query;
 
   let allListings;
 
@@ -14,6 +15,10 @@ module.exports.indexPage = async (req, res) => {
         { location: { $regex: search, $options: "i" } },
         { country: { $regex: search, $options: "i" } },
       ],
+    });
+  } else if (category) {
+    allListings = await Listing.find({
+      category: { $regex: category, $options: "i" },
     });
   } else {
     allListings = await Listing.find({});

@@ -148,6 +148,10 @@ body {
 #filters::-webkit-scrollbar {
   display: none;
 }
+#filters a {
+  text-decoration: none;
+  color: black;
+}
 
 .filter {
   display: flex;
@@ -157,7 +161,7 @@ body {
   border-bottom: 2px solid transparent;
   margin-left: 1rem;
 }
-.filter p {
+.filter span {
   font-size: 0.8rem;
   white-space: nowrap;
 }
