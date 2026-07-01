@@ -117,6 +117,19 @@ body {
   background-color: white;
 }
 
+.card-text {
+  line-height: 1.6;
+}
+
+.price {
+  font-weight: 500;
+}
+
+.card-text i {
+  color: #fe424d;
+  margin-right: 4px;
+}
+
 /* new and edit page btn */
 .add-btn {
   background-color: #fe424d !important ;
@@ -148,17 +161,14 @@ body {
 #filters::-webkit-scrollbar {
   display: none;
 }
-#filters a {
-  text-decoration: none;
-  color: black;
-}
 
 .filter {
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.7;
-  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  color: black;
+  opacity: 0.6;
   margin-left: 1rem;
 }
 .filter span {
@@ -166,8 +176,9 @@ body {
   white-space: nowrap;
 }
 
-.filter:hover {
+.filter:hover,
+.filter.active {
+  color: #fe424d;
   opacity: 1;
-  cursor: pointer;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #fe424d;
 }

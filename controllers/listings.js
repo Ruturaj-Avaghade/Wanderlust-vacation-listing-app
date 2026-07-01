@@ -24,7 +24,7 @@ module.exports.indexPage = async (req, res) => {
     allListings = await Listing.find({});
   }
 
-  res.render("./listings/index.ejs", { allListings });
+  res.render("./listings/index.ejs", { allListings, category });
 };
 
 module.exports.addNewListing = async (req, res) => {

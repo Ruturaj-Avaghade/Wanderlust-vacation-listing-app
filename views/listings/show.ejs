@@ -86,6 +86,7 @@
 
       <% } %>
 <hr>
+
   <p><b>All Reviews</b></p>
    
  <div class="row">
@@ -97,19 +98,20 @@
            <p class="card-text"><%= review.comment %> </p>
           <p class="starability-result" data-rating="<%= review.rating %>"></p>
 
-           
+      <% if(currentUser && review.author._id.equals(currentUser._id)){ %>   
       <form 
       class="mb-3"
       method="post" 
-      action="/listings/<%= listing.id %>/reviews/<%= review.id%>?_method=DELETE ">
+      action="/listings/<%= listing._id %>/reviews/<%= review._id%>?_method=DELETE">
 
       <button class="btn btn-dark btn-sm" >delete</button>
       </form>
-       </div>
-     </div>
-    
+    </div>
+      <% } %>
 
     <% } %>
+     </div>
+    
     </div>
 
      <div id="map"></div>

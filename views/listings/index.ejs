@@ -4,12 +4,12 @@
   
 <div id="filters">
 
-  <a href="/listings" class="filter">
+  <a href="/listings" class="filter <%= !category? 'active' : ''%> ">
     <div><i class="fa-regular fa-compass"></i></div>
     <span>Explore All</span>
   </a>
 
-  <a href="/listings?category=Rooms" class="filter">
+  <a href="/listings?category=Rooms" class="filter <%= category === 'Rooms'? 'active' : ''%>">
     <div><i class="fa-solid fa-bed"></i></div>
     <span>Rooms</span>
   </a>
@@ -19,32 +19,32 @@
     <span>Iconic Cities</span>
   </a>
 
-  <a href="/listings?category=Mountains" class="filter">
+  <a href="/listings?category=Mountains" class="filter <%= category === 'Mountains'? 'active' : ''%>">
     <div><i class="fa-solid fa-mountain"></i></div>
     <span>Mountains</span>
   </a>
 
-  <a href="/listings?category=Castles" class="filter">
+  <a href="/listings?category=Castles" class="filter <%= category === 'Castles'? 'active' : ''%>">
     <div><i class="fa-brands fa-fort-awesome"></i></div>
     <span>Castles</span>
   </a>
 
-  <a href="/listings?category=Amazing%20Pools" class="filter">
+  <a href="/listings?category=Amazing%20Pools" class="filter <%= category === 'Amazing Pools'? 'active' : ''%>">
     <div><i class="fa-solid fa-person-swimming"></i></div>
     <span>Amazing Pools</span>
   </a>
 
-  <a href="/listings?category=Camping" class="filter">
+  <a href="/listings?category=Camping" class="filter <%= category === 'Camping'? 'active' : ''%>">
     <div><i class="fa-solid fa-campground"></i></div>
     <span>Camping</span>
   </a>
 
-  <a href="/listings?category=Farms" class="filter">
+  <a href="/listings?category=Farms" class="filter <%= category === 'Farms'? 'active' : ''%>">
     <div><i class="fa-solid fa-cow"></i></div>
     <span>Farms</span>
   </a>
 
-  <a href="/listings?category=Arctic" class="filter">
+  <a href="/listings?category=Arctic" class="filter <%= category === 'Arctic'? 'active' : ''%>">
     <div><i class="fa-regular fa-snowflake"></i></div>
     <span>Arctic</span>
   </a>
@@ -61,11 +61,16 @@
   <img src="<%= listing.image.url %>" class="card-img-top" alt="listings image" style="height: 20rem;">
     <div class="card-img-overlay"></div>
   <div class="card-body">
-    <p class="card-text">
-        <b><%= listing.title %></b><br>
-        &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
-       
-    </p>
+   <p class="card-text">
+    <strong><%= listing.title %></strong><br>
+
+    <i class="fa-solid fa-location-dot"></i>
+    <%= listing.location %>, <%= listing.country %><br>
+
+    <span class="price">
+        &#8377; <strong><%= listing.price.toLocaleString("en-IN") %></strong> / night
+    </span>
+</p>
     
   </div>
 </div>
